@@ -1,0 +1,149 @@
+* {
+    --main-background-color: hsl(268, 75%, 9%);
+    --toggle-background-color: hsl(268, 71%, 12%);
+    --screen-background-color: hsl(281, 89%, 26%);
+    --key-background-color:hsl(285, 91%, 52%);
+    --key-shadow-color: hsl(176, 100%, 44%); 
+    --toggle-key-bg: hsl(177, 92%, 70%);
+    --toggle-key-shadow: hsl(268, 47%, 21%);
+    --gray-key-bg: hsl(290, 70%, 36%);
+    --orange-shadow: hsl(28, 16%, 65%); 
+    --yellow-color:hsl(52, 100%, 62%);
+    --primary-text-color: hsl(198, 20%, 13%);
+    --secondry-text-color: hsl(0, 100%, 100%);
+    font-family: sans-serif;
+}
+body {
+    background-color: var(--main-background-color);
+}
+@media (min-width: 375px){
+    .calculator {
+        width: 90%;
+        margin: 50px auto;
+    }
+}
+@media (min-width: 1000px){
+    .calculator {
+        width: 30%;
+        margin: 50px auto;
+    }
+}
+.calculator {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+p {
+    margin: 0px;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+.theme-toggeler {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+.theme-choices {
+    display: flex;
+    gap: 10px;
+}
+.calc-text {
+    color: var(--yellow-color);
+    font-size: x-large;
+    font-weight: 800;
+    align-self: center;
+}
+.theme-text {
+    font-weight: 500;
+    font-size: smaller;
+    color: var(--yellow-color);
+    align-self: flex-start;
+}
+.theme-choices {
+    font-weight: 500;
+    font-size: smaller;
+    color: var(--yellow-color);
+    align-self: flex-end;
+}
+.theme-choices div{
+    background-color: var(--toggle-key-bg);
+    padding: 8px;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.progress {
+    color: var(--yellow-color);
+    font-size: large;
+}
+.screen {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    background-color: var(--screen-background-color);
+    border-radius: 5px;
+}
+.result {
+    font-size: xx-large;
+    color: var(--yellow-color);
+    font-weight: 800;
+}
+.main {
+    font-size: x-large;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+    background-color: var(--toggle-background-color);
+    color: var(--yellow-color);
+    gap: 20px;
+    border-radius: 8px;
+}
+.main div:not(.delete-button,.reset,.equal){
+    font-weight: 800;
+    color: var(--yellow-color);
+    background-color: var(--gray-key-bg);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 0px var(--orange-shadow);
+    cursor: pointer;
+}
+.delete-button,
+.reset {
+    font-weight: 800;
+    color: var(--secondry-text-color);
+    background-color: var(--key-background-color);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 0px var(--key-shadow-color);
+    cursor: pointer;
+}
+.equal {
+    font-weight: 800;
+    color: var(--primary-text-color);
+    background-color: var(--toggle-key-bg);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 0px var(--toggle-key-shadow);
+    cursor: pointer;
+}
+.reset {
+    grid-column: 1 / 3;
+}
+.equal {
+    grid-column: 3 / 5;
+}
